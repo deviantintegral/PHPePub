@@ -1266,6 +1266,7 @@ class EPub {
             $imageData = $image['image'];
             $mimetype = $image['mime'];
             $fileName = preg_replace('#\.[^\.]+$#', "." . $image['ext'], $fileName);
+            $fileName = md5($fileName) . "." . $image['ext'];
         }
 
         $path = pathinfo($fileName);
